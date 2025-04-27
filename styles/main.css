@@ -1,0 +1,139 @@
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #111827;
+    color: #ffffff;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1f2937;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #4b5563;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #6b7280;
+}
+
+/* Graph Container */
+#cy {
+    min-height: 500px;
+    background: radial-gradient(circle at center, #1a1f2c 0%, #111827 100%);
+    border-radius: 0.5rem;
+}
+
+/* Navigation Hover Effects */
+nav a {
+    transition: all 0.2s ease-in-out;
+}
+
+nav a:hover {
+    transform: translateX(4px);
+}
+
+/* Card Hover Effects */
+.bg-gray-800 {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.bg-gray-800:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Button Animations */
+button {
+    transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+    transform: scale(1.02);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Node Styles */
+.node {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.node circle {
+    fill-opacity: 0.8;
+    stroke: rgba(255, 255, 255, 0.2);
+    stroke-width: 1.5;
+}
+
+.node:hover circle {
+    fill-opacity: 1;
+    stroke: rgba(255, 255, 255, 0.4);
+}
+
+.node text {
+    font-size: 12px;
+    fill: #ffffff;
+    pointer-events: none;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+    opacity: 0.8;
+}
+
+.node:hover text {
+    opacity: 1;
+}
+
+/* Edge Styles */
+.link {
+    stroke: rgba(255, 255, 255, 0.15);
+    stroke-width: 1;
+    transition: all 0.3s ease;
+}
+
+.link:hover {
+    stroke: rgba(255, 255, 255, 0.3);
+    stroke-width: 1.5;
+}
+
+/* Loading Animation */
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+.loading {
+    animation: pulse 1.5s infinite;
+}
+
+/* Tooltip Styles */
+.tooltip {
+    @apply absolute z-50 px-2 py-1 text-sm bg-gray-800 text-white rounded shadow-lg;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+/* Modal Styles */
+.modal-backdrop {
+    @apply fixed inset-0 bg-black bg-opacity-50 z-40;
+    backdrop-filter: blur(4px);
+}
+
+.modal-content {
+    @apply fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gray-800 rounded-lg shadow-xl z-50;
+}
